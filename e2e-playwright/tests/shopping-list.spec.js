@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
 
 test("Main page has expected title and headings.", async ({ page }) => {
-  await page.goto("/shoppinglists");
+  await page.goto("https://shoppinglist-rc.deno.dev/shoppinglists");
   await expect(page).toHaveTitle("Shopping Lists");
 });
 

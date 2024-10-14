@@ -1,0 +1,48 @@
+<% layout("./layouts/layout.eta") %>
+
+<div class="columns is-mobile is-centered">
+  <div class="column is-half">
+
+<div class="content is-small">
+ <span class="icon-text"> 
+ <a href="/shoppinglists"> <span>Home </span></a>
+ <a href=""><span>><%= it.shoppinglist.name %></span></a>
+ </span></div>
+  
+
+<br>
+<div class="box">
+<div class="content">
+<h1><%= it.shoppinglist.name %></h1></div>
+
+
+<% it.items.forEach((item) => { %>
+ <form method="POST" action="/shoppinglists/<%= it.shoppinglist.id %>/<% if(item.collected ===true){ %>uncheck<%}else{%>check<%}%>/<%= item.id %>">
+    <input class="is-primary" type="checkbox" id="<%= item.name %>" onChange="this.form.submit()" name="<%= item.name %>" 
+    <% if(item.collected===true){ %>checked<%}%> />
+    <label for="<%= item.name %>"><% if(item.collected===true){ %><del><%= item.name %></del><%}else{%><%= item.name %><%}%></label>
+  </form>
+ 
+<% }); %>
+<br>
+
+<form method="POST" action="/shoppinglists/<%= it.shoppinglist.id %>">
+<div class="field has-addons">
+  <div class="control">
+    <input class="input is-small is-rounded" type="text" name="name" placeholder=" Add new item"/>
+  </div>
+  <div class="control">
+    <button class="button is-info is-small is-rounded is-primary" type="submit" id="add">
+      Add
+    </button>
+  </div>
+</div>
+
+</form>
+<% if(it.error === "1"){%><div class="tag  is-small is-danger" id="error">Name cannot be empty</div> <% }; %>
+
+</div></div>
+</div>
+
+
+

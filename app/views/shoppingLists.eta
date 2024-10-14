@@ -1,0 +1,95 @@
+<% layout("./layouts/layout.eta") %>
+<div class="columns is-mobile is-centered">
+  <div class="column is-half">
+<div class="content">
+<h3>Shopping Lists</h3>
+
+</div>
+
+
+
+
+<table class="table is-hoverable is-striped is-fullwidth">
+  <thead>
+    <tr>
+      <th>Name of the list</th>
+      <th><abbr title="items">Items collected</abbr></th>
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    
+<% it.shoppinglists.forEach((shoppinglist) => { %>
+<% if (shoppinglist.active === true){%>
+  <tr>  
+ <td><a href="/shoppinglists/<%= shoppinglist.id %>"> <%= shoppinglist.name %></a> </td>
+
+ <td><progress class="progress is-primary" value="<%= shoppinglist.completed %>" max="<%= shoppinglist.total %>"> </progress></td>
+ 
+  <td>
+   <form method="POST" action="/shoppinglists/<%= shoppinglist.id %>/deactivate">
+   <div class="control">
+    <button class="button is-small is-rounded is-primary" type="submit">
+      Mark completed
+    </button>
+  </div>
+   
+  </form></td> 
+ </tr><%} else {%>
+ <tr>  
+ <td><del><a href="/shoppinglists/<%= shoppinglist.id %>"> <%= shoppinglist.name %></a> </del></td>
+
+ <td><progress class="progress is-primary" value="<%= shoppinglist.completed %>" max="<%= shoppinglist.total %>"> </progress></td>
+ 
+  <td> </td> 
+ </tr>
+
+
+
+
+
+<% }}); %>
+ <tr>  
+ <td><form method="POST" action="/shoppinglists">
+  <div class="field has-addons">
+  <div class="control">
+  <input class="input is-small is-rounded" type="text" name="name"  placeholder=" Add a new list" />
+ 
+   </div>
+  <div class="control">
+    <button class="button is-info is-small is-rounded is-primary" type="submit" id="add">
+      Create
+    </button>
+  </div>
+</div>
+</form>
+
+<% if(it.error === "1"){%><div id="error" class="tag  is-small is-danger">Name cannot be empty</div> <% }; %></td>
+
+ <td> </td>
+ 
+  <td> </td> 
+ </tr>
+</table>
+<br>
+
+<%if(it.fullList === 0){%>
+<form method="GET" action="/allshoppinglists">
+ <input class="is-primary" type="checkbox" id="show" onChange="this.form.submit()" name="show" />
+    <label for="show">show completed lists</label>
+</form>
+<%} else if(it.fullList === 1) {%>
+<form method="GET" action="/shoppinglists">
+ <input class="is-primary" type="checkbox" id="show" onChange="this.form.submit()" name="show" checked />
+    <label for="show">show completed lists</label>
+</form>
+
+<% }; %>
+</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,36 @@
+<% layout("./layouts/layout.eta") %>
+<div class="columns is-mobile is-centered">
+  <div class="column is-half">
+<div class="content">
+<h3>Status Table</h3>
+</div>
+
+
+
+
+<table class="table is-hoverable is-narrow">
+ 
+  <tbody>
+    <tr>
+      <th>Number of lists</th>
+      <th><%= it.statTable.lists %></th>
+      
+      
+    </tr>
+  
+  <tr>
+      
+      <th>Number of items</th>
+      <th><%= it.statTable.items %></th>
+      
+    </tr>
+  </tbody>
+ </table>
+
+</div>
+</div>
+
+
+
+
+

@@ -3,7 +3,7 @@ import * as shoppingListService from "../services/shoppingListService.js";
 import * as shoppingListItemService from "../services/shoppingListItemService.js";
 import * as requestUtils from "../utils/requestUtils.js";
 
-const eta = new Eta({ views: `${Deno.cwd()}/views/` });
+const eta = new Eta({ views: `${Deno.cwd()}/app/views/` });
 
 const responseDetails = {
     headers: { "Content-Type": "text/html;charset=UTF-8" },

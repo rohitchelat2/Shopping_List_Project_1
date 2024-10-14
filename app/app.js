@@ -2,7 +2,6 @@ import { serve } from "./deps.js";
 
 import * as listController from "./controllers/listController.js";
 import * as listItemController from "./controllers/listItemController.js";
-import * as requestUtils from "./utils/requestUtils.js";
 
 const handleRequest = async (request) => {
   const url = new URL(request.url);

@@ -4,7 +4,7 @@ module.exports = {
   reporter: "list",
   workers: 5,
   use: {
-    baseURL: "http://localhost:7777",
+    baseURL: "https://shoppinglist-rc.deno.dev/",
     headless: true,
     ignoreHTTPSErrors: true,
   },

@@ -6,7 +6,7 @@ test("Main page has expected title and headings.", async ({ page }) => {
 });
 
 test("Adding a new list", async ({ page }) => {
-  await page.goto("/shoppinglists");
+  await page.goto("https://shoppinglist-rc.deno.dev/shoppinglists");
   const words = [
     "Butter",
     "Eggs",

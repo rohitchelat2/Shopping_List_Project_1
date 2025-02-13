@@ -10,9 +10,10 @@ Mark completed button on each lists can be used for deactivating lists.
 Similarly checkboxes are available for marking completed items in teh list.
 
 ## Tools used
-1. Deno
-2. Postgres SQL
-3. Bulma CSS
-4. Playwright
-5. Deno Deploy
-6. Neon DB
+1. Deno OAK
+2. ETA
+3. Postgres SQL
+4. Bulma CSS
+5. Playwright
+6. Deno Deploy
+7. Neon DB

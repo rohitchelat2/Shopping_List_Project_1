@@ -1,5 +1,6 @@
 # Shopping List Project
-##Intro
+## Intro
+
 It is a simple shopping list app created as an assignment for Fullstack course.
 Live app can accessed at https://shoppinglist-rc.deno.dev/shoppinglists
 
